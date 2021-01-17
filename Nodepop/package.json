@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "dev": "crossDEBUG=nodepop:* nodemon",
     "initDB": "node ./initDB.js",
-    "ngrok": "ngrok http -region=eu 3000"
+    "ngrok": "ngrok http -region=eu 3000",
+    "cluster": "node ./bin/cluster"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

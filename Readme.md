@@ -46,6 +46,14 @@ npm run initDB
 npm run start
 ```
 
+## Cluster
+
+You can start ther service in cluster mode:
+
+```sh
+npm run cluster
+```
+
 ## Development Start
 
 ```sh
@@ -116,7 +124,6 @@ GET --> /api/adverts/\_id
    }
 }
 ```
-
 
 ### Paginated Results
 
@@ -226,7 +233,6 @@ We can apply four different search filters.:
 http://localhost:3000/api/adverts?sort=name
 ```
 
-
 ## Create an advert
 
 POST --> /api/adverts
@@ -284,7 +290,7 @@ Message on console: 'Advert deleted succesfully!'
 
 ## Website Routes
 
-If we visit the following URL: http://localhost:3000/adverts , we will get all ads.  In adittion we can apply the same search criteria as in the API.
+If we visit the following URL: http://localhost:3000/adverts , we will get all ads. In adittion we can apply the same search criteria as in the API.
 
 ```
 http://localhost:3000/adverts?skip=1&limit=2&sort=name&tag=lifestyle
