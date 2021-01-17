@@ -1,0 +1,27 @@
+{
+  "name": "nodepop",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "crossDEBUG=nodepop:* nodemon",
+    "initDB": "node ./initDB.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cross-env": "^7.0.3",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-validator": "^6.9.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.11.11",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "prettier": "2.2.1"
+  }
+}

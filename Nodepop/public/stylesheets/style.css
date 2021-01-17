@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  color: black;
+  background: gray;
+}
+
+a {
+  color: #00b7ff;
+  text-decoration: none;
+}
