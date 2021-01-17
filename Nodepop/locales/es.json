@@ -1,0 +1,19 @@
+{
+	"Welcome to NodepopJS": "Welcome to NodepopJS",
+	"Get all adds": "Get all adds",
+	"These are some examples": "These are some examples",
+	"Ordered from lowest to highest price": "Ordered from lowest to highest price",
+	"List of ads stored in the database": "List of ads stored in the database",
+	"Results in alphabetical order": "Results in alphabetical order",
+	"Articles with prices less than 1000": "Articles with prices less than 1000",
+	"Articles with prices over 1000": "Articles with prices over 1000",
+	"Articles with 5000": "Articles with 5000",
+	"All results with the tag": "All results with the tag",
+	"ALl results with a price equal to 5000": "ALl results with a price equal to 5000",
+	"All results with a price equal to 5000": "All results with a price equal to 5000",
+	"Name": "Name",
+	"On sale": "On sale",
+	"Price": "Price",
+	"Tags": "Tags",
+	"Photo": "Photo"
+}

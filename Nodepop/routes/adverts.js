@@ -54,7 +54,6 @@ router.get('/', async function (req, res, next) {
       /* arrayAdvertsDB: arrayAdvertsDB */
       adverts: adverts,
       title: 'Nodepop',
-      description: 'List of ads stored in the database:',
     });
   } catch (err) {
     {

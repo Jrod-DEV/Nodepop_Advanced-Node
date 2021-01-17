@@ -9,6 +9,11 @@ var app = express();
 // Mongoose connection
 require('./lib/connectMongoose');
 
+// Setup i18n
+const i18n = require('./lib/i18nSetup');
+app.use(i18n.init);
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');

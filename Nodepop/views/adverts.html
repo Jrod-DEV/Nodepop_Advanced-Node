@@ -1,7 +1,13 @@
 <%- include header.html%>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary">EN</button>
+  <button type="button" class="btn btn-secondary">ES</button>
+</div>
+
 <div>
 
-  <h3><%= description %> </h3>
+  <h4><%= __('List of ads stored in the database') %> :<h4>
 
   <div class="container">
 
@@ -9,10 +15,11 @@
       <thead>
         <tr>
           <th scope="col">_id</th>
-          <th scope="col">Name</th>
-          <th scope="col">On sale</th>
-          <th scope="col">Price</th>
-          <th scope="col">Photo</th>
+          <th scope="col"><%= __('Name') %> </th>
+          <th scope="col"><%= __('On sale') %></th>
+          <th scope="col"><%= __('Price') %></th>
+          <th scope="col"><%= __('Tags') %></th>
+          <th scope="col"><%= __('Photo') %></th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +31,7 @@
               <td><%= advert.name %></td>
               <td><%= advert.onsale %></td>
               <td><%= advert.price %></td>
+              <td><%= advert.tags %></td>
               <td><%= advert.photo %></td>
             </tr>
           <% }) %>
@@ -33,9 +41,28 @@
     </table>
 </div>
 
-<form action="">
-
-</form>
-
+<div>
+  <h4><%= __('These are some examples') %>:</h4>
+  <ul>
+    <li>
+      <a href="?sort=price"><%= __('Ordered from lowest to highest price')%>.</a>
+    </li>
+    <li>
+      <a href="?sort=name"><%= __('Results in alphabetical order')%>.</a>
+    </li>
+    <li>
+      <a href="?price=-1000"><%= __('Articles with prices less than 1000') %> .</a>
+    </li>
+    <li>
+      <a href="?price=1000-"><%= __('Articles with prices over 1000') %> .</a>
+    </li>
+    <li>
+      <a href="?price=5000"><%= __('All results with a price equal to 5000') %> .</a>
+    </li>
+    <li>
+      <a href="?tag=lifestyle"><%= __('All results with the tag') %>  "lifestyle".</a>
+    </li>
+  </ul>
+</div>
 
 <%- include footer.html %>
