@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to NodepopJS 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
 > API REST to upload purchase and sale items to a database and consume it from any platform using JSON format.
@@ -50,6 +50,12 @@ npm run start
 
 ```sh
 npm run dev
+```
+
+**You can create a tunnel with ngrok (HTTPS)**
+
+```sh
+ngrok http -region=eu 3000
 ```
 
 ## API Methods
