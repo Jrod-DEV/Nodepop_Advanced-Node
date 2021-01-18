@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "crossDEBUG=nodepop:* nodemon",
+    "dev": "crossDEBUG=nodepop:* nodemon ./bin/www",
     "initDB": "node ./initDB.js",
     "ngrok": "ngrok http -region=eu 3000",
     "cluster": "node ./bin/cluster"

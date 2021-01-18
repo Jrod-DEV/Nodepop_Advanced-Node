@@ -1,8 +1,13 @@
 <%- include header.html%>
 
-<div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary">EN</button>
-  <button type="button" class="btn btn-secondary">ES</button>
+
+
+<!-- i18n setup in views -->
+<div>
+  <% getLocales().forEach(locale => { %>
+  <a href="/change-locale/<%= locale %> " class="btn btn-secondary"><%= locale %> </a>
+    
+  <% }) %> 
 </div>
 
 <div>
