@@ -5,6 +5,7 @@ require('dotenv').config();
 const readLine = require('readline');
 const conn = require('./lib/connectMongoose');
 const Advert = require('./models/Advert');
+const User = require('./models/User');
 
 conn.once('open', async () => {
   try {
@@ -17,7 +18,7 @@ conn.once('open', async () => {
       return process.exit(0);
     }
     await initAdverts();
-    // await initUsers();
+    await initUsers();
     // ..
     conn.close();
   } catch (err) {
@@ -26,6 +27,9 @@ conn.once('open', async () => {
   }
 });
 
+/**
+ * Init adrverts on DB
+*/
 async function initAdverts() {
   // Delete existing documents in the collection
   console.log('Emptying adverts collection...');
@@ -64,6 +68,29 @@ async function initAdverts() {
     },
   ]);
   console.log(`${result.length} adverts has been created succesfully!`);
+}
+
+/**  
+*Init users on DB
+*/
+async function initUsers() {
+  // Delete existing documents in the collection
+  console.log('Emptying users collection...');
+  await User.deleteMany();
+
+  // Upload inital documents
+  console.log('Loading users...');
+  const result = await User.insertMany([
+    {
+      email: 'user@example.com',
+      password: 1234,
+    },
+    {
+      email: 'user@nodepop.com',
+      password: 4321,
+    },
+  ]);
+  console.log(`${result.length} users has been created succesfully!`);
 }
 
 //
