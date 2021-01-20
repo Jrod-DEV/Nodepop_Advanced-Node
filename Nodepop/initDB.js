@@ -49,14 +49,14 @@ async function initAdverts() {
       name: 'Snowboard',
       onsale: false,
       price: 200,
-      photo: 'table.jpg',
+      photo: 'snowboard.jpg',
       tags: ['lifestyle'],
     },
     {
       name: 'Super Bike',
       onsale: true,
       price: 5000,
-      photo: 'moto.jpg',
+      photo: 'superbike.jpg',
       tags: ['motor', 'lifestyle'],
     },
     {

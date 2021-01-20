@@ -31,14 +31,18 @@ app.use(i18n.init);
 /**
  * Website Routes
  */
-app.use('/',              require('./routes/index'));
-app.use('/adverts',       require('./routes/adverts'));
+app.use('/', require('./routes/index'));
+app.use('/adverts', require('./routes/adverts'));
 app.use('/change-locale', require('./routes/change-locale'));
 
 /**
  * API Routes
  */
 app.use('/api/adverts', require('./routes/api/adverts'));
+
+
+// AUTH -> Controller structure
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
