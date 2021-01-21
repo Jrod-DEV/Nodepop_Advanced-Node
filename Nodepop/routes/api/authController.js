@@ -2,12 +2,13 @@
 
 const User = require('../../models/User');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 class authController {
   /**
-   * POST /api/adverts
+   * POST /api/authentication
    */
-  async post(req, res, next) {
+  async postJWT(req, res, next) {
     try {
       // Collect values from the database
       const email = req.body.email;
@@ -19,13 +20,24 @@ class authController {
 
       // If the user does not exist or the password does not match, we show an error
       if (!user || !(await bcrypt.compare(password, user.password))) {
-        res.locals.error = res.__('Invalid credentials');
+        // Responding to an authentication error in JSON
+        const error = new Error('Invalid credentials');
+        error.status = 401;
+        return next(error);
       }
-
-      // If the user exists and the password is correct, we redirect it to the requested URL
-      res.send('ok')
-
-      res.send('ok');
+      // If the user exists and the password is correct, we create a JWT
+      jwt.sign(
+        { _id: user._id },
+        process.env.JWT_SECRET,
+        { expiresIn: '2d' },
+        (err, tokenJWT) => {
+          if (err) {
+            return next(err);
+          }
+          // Answer
+          res.json({ tokenJWT: tokenJWT });
+        }
+      );
     } catch (err) {
       return next(err);
     }

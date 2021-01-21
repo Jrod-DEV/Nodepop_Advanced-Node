@@ -1,28 +1,25 @@
 'use strict';
-
 const jwt = require('jsonwebtoken');
+//Function that returns an authentication middleware with JWT
 
-function authJwt() {
-  // If there is no user, we return an error through a middleware.
-  return function (req, res, next) {
-    const token =
-      req.body.token || req.query.token || req.get('x-access-token');
+module.exports = function () {
+  return (req, res, next) => {
+    // Check that we have the Authorization header with a valid JWT
 
-    if (!token) {
-      const err = new Error('No token provided');
-      err.status = 401;
-      return next(err);
+    // Collect token
+    const tokenJWT = req.get('Authorization') || req.query.token || req.body.token;
+
+    // If there is no token we do not allow access to the route
+    if (!tokenJWT) {
+      const error = new Error('No token provided');
+      error.status = 401;
+      return next(error);
     }
-    // If the token exists
-    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-      if (err) {
-        return next(err);
-      }
-      // We save the user id in request so that the following middlewares can use it
-      req.userId = decoded._id;
-      next();
-    });
-  };
-}
 
-module.exports = authJwt;
+    // We verify the token
+    jwt.verify(tokenJWT, process.env.JWT_SECRET, (err, payload) => {
+      if (err) return next(err);
+      next();
+    })
+  };
+};

@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const loginController = require('./routes/api/authController')
+const authJwt = require('./lib/authJwt');
+
 
 // Loading environment variables
 require('dotenv').config();
@@ -41,10 +44,8 @@ app.use('/change-locale', require('./routes/change-locale'));
 /**
  * API Routes
  */
-const loginController = require('./routes/api/authController')
-
-app.use('/api/adverts', require('./routes/api/adverts'));
-app.post('/api/authenticate', loginController.post);
+app.post('/api/authenticate', loginController.postJWT);
+app.use('/api/adverts', authJwt(), require('./routes/api/adverts'));
 
 
 // catch 404 and forward to error handler

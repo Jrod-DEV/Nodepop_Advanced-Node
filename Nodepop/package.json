@@ -17,6 +17,7 @@
     "dotenv": "^8.2.0",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-session": "^1.17.1",
     "express-validator": "^6.9.0",
     "http-errors": "~1.6.3",
     "i18n": "^0.13.2",
