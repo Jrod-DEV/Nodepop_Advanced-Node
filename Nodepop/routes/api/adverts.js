@@ -20,6 +20,8 @@ const upload = multer({ storage: storage });
 /* Get /api/adverts */
 router.get('/', async function (req, res, next) {
   try {
+    console.log('The logged in user has the _id:', req.apiAuthUserID)
+
     const name = req.query.name;
     const onsale = req.query.onsale;
     const price = req.query.price;

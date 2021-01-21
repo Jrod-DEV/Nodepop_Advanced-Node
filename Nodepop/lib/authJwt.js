@@ -19,6 +19,8 @@ module.exports = function () {
     // We verify the token
     jwt.verify(tokenJWT, process.env.JWT_SECRET, (err, payload) => {
       if (err) return next(err);
+      // If any middleware needs the ID of the user
+      req.apiAuthUserID = payload._id;
       next();
     })
   };
