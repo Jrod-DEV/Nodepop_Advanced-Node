@@ -29,7 +29,7 @@ conn.once('open', async () => {
 
 /**
  * Init adrverts on DB
-*/
+ */
 async function initAdverts() {
   // Delete existing documents in the collection
   console.log('Emptying adverts collection...');
@@ -70,9 +70,9 @@ async function initAdverts() {
   console.log(`${result.length} adverts has been created succesfully!`);
 }
 
-/**  
-*Init users on DB
-*/
+/**
+ *Init users on DB
+ */
 async function initUsers() {
   // Delete existing documents in the collection
   console.log('Emptying users collection...');
@@ -83,11 +83,11 @@ async function initUsers() {
   const result = await User.insertMany([
     {
       email: 'user@example.com',
-      password: 1234,
+      password: await User.hashPassword('1234'),
     },
     {
       email: 'user@nodepop.com',
-      password: 4321,
+      password: await User.hashPassword('4321'),
     },
   ]);
   console.log(`${result.length} users has been created succesfully!`);

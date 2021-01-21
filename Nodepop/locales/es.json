@@ -2,6 +2,7 @@
 	"Welcome to NodepopJS": "Bienvenido a NodepopJS",
 	"Get all adds": "Ver todos los anuncios",
 	"These are some examples": "Estos son algunos ejemplos",
+	"Invalid credentials": "Credenciales inválidas",
 	"Ordered from lowest to highest price": "Ordenado desde el precio más bajo al más alto",
 	"List of ads stored in the database": "Lista de todos los anuncios almacenados en la base de datos",
 	"Results in alphabetical order": "Resultados en orden alfabético",

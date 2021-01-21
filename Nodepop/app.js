@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Loading environment variables
+require('dotenv').config();
+
 var app = express();
 
 // Mongoose connection
@@ -38,10 +41,10 @@ app.use('/change-locale', require('./routes/change-locale'));
 /**
  * API Routes
  */
+const loginController = require('./routes/api/authController')
+
 app.use('/api/adverts', require('./routes/api/adverts'));
-
-
-// AUTH -> Controller structure
+app.post('/api/authenticate', loginController.post);
 
 
 // catch 404 and forward to error handler
