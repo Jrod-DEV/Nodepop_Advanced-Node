@@ -66,8 +66,17 @@ npm run dev
 ngrok http -region=eu 3000
 ```
 
-## API Methods
+## Authentication
+In this version of the API, the routes are protected by JWT.
+- To be able to access the routes, first we must make a POST with the email and password  to the following address:
+```
+  http://localhost:3000/api/authenticate
+```
+- The next step is to add the token that returns the "POST" to "/api/authenticate" in the HEADER of each request we want to make to the different API routes.
 
+- In addition, in each request we will be able to see the ID of the user who is logged in.
+
+## API Methods
 ### List of all adverts
 
 GET --> /api/adverts
