@@ -22,17 +22,3 @@ responder.on('convert', async (req, done) => {
   const result = await image.resize(100, 100).write(path.join(__dirname, '../public/images/thumbnails/' + req.name));
   done(result);
 });
-
-
-/* import jimp from 'jimp';
-
-async function main() {
-	// Read the image.
-	const image = await jimp.read('test/image.png');
-
-	// Resize the image to width 150 and auto height.
-	await image.resize(150, jimp.AUTO);
-
-	// Save and overwrite the image
-	await image.writeAsync('test/image.png');
-} */
