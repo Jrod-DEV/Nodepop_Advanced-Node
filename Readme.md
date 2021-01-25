@@ -17,7 +17,7 @@ npm install
 
 ## Configuration of environment variables (.env)
 
-Copy .env.exapmle file and apply the necessary configuration parameters following the example.
+Copy .env.example file and apply the necessary configuration parameters following the example.
 
 ```
 cp .env.example .env
@@ -26,7 +26,7 @@ cp .env.example .env
 ## How to start a local mongoDB instance for development
 
 ```sh
-./bin/mongod --dbpath ./data/db --directoryperdb
+./bin/mongod --dbpath ./data/db --directoryperdb 
 ```
 
 ## Load inital database
@@ -316,6 +316,7 @@ We can upload images to our API, which will be stored in the images folder throu
 ```
 http://localhost:3000/api/adverts/upload
 ```
+- Every time we upload an image, through a microservice (imageConverter.js) made with cote.js and the jimp library, a thumbnail of the original image will be automatically created.
 
 ### View stored images
 
