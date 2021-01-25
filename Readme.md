@@ -72,7 +72,7 @@ In this version of the API, the routes are protected by JWT.
 ```
   http://localhost:3000/api/authenticate
 ```
-- The next step is to add the token that returns the "POST" to "/api/authenticate" in the HEADER of each request we want to make to the different API routes.
+- The next step is to add the token that returns the "POST" to "/api/authenticate" in the HEADER of each request we want to have access to the different API routes.
 
 - In addition, in each request we will be able to see the ID of the user who is logged in.
 
