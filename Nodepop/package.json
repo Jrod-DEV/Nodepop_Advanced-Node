@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "start -m": "concurrently \"npm start \"npm run microClient \"",
     "microClient": "node imageConvertClient.js",
-    "microConverter": "node ./microservices/imageConverter.js",
+    "service": "node ./microservices/imageConverter.js",
     "dev": "crossDEBUG=nodepop:* nodemon ./bin/www",
     "initDB": "node ./initDB.js",
     "ngrok": "ngrok http -region=eu 3000",

@@ -4,6 +4,9 @@
 </p>
 
 > API REST to upload purchase and sale items to a database and consume it from any platform using JSON format.
+# Release Notes
+In this version we implemented authentication with JWT, internationalization and the creation of a microservice 
+with cote.js and jimp to create thumbnails of the images uploaded to the app.
 
 ### 🏠 [Homepage](http://localhost:3000)
 
@@ -46,6 +49,20 @@ npm run initDB
 npm run start
 ```
 
+## Usage with thumbnail´s microservice
+- We will have to open two terminals, in the first one we execute the following script:
+```
+npm run start -m
+```
+This command starts the app and the client of the thumbnail creation microservice. 
+
+- In the second terminal we launch the microservice responder with the command:
+```
+npm run service
+```
+
+* Once these two scripts are applied, the app will show us in the adverts views the reduced images in each advert.
+
 ## Cluster
 
 You can start ther service in cluster mode:
@@ -73,6 +90,10 @@ In this version of the API, the routes are protected by JWT.
   http://localhost:3000/api/authenticate
 ```
 - The next step is to add the token that returns the "POST" to "/api/authenticate" in the HEADER of each request we want to have access to the different API routes.
+```
+     key          value
+Authorization:   <token>
+``` 
 
 - In addition, in each request we will be able to see the ID of the user who is logged in.
 
